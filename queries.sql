@@ -53,7 +53,7 @@ VALUES ('Alice'), ('Bob'), ('Chris');
 --3. Insert two channels, #general and #random
 INSERT INTO channel
       (name, organization_id)
-VALUES ('#general', 1), ('#random', 1);
+VALUES ('#general', (SELECT id FROM organization WHERE name = 'Lambda School')), ('#random', (SELECT id FROM organization WHERE name = 'Lambda School'));
 
 --4. Insert the following:
 --Alice should be in #general and #random.
